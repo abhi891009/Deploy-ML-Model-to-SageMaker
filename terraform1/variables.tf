@@ -13,4 +13,5 @@ variable "sagemaker_role_arn" {
 variable "ecr_image_uri" {
   description = "URI of the Docker image in ECR"
   type        = string
+  default     = "921666318654.dkr.ecr.us-east-1.amazonaws.com/myapp-repo"
 }
