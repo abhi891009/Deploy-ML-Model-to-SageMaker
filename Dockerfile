@@ -1,8 +1,13 @@
-FROM python:3.9-slim
+FROM python:3.9-slim-buster
 
-RUN pip install mlflow scikit-learn pandas
-
-COPY model /app/model
 WORKDIR /app
 
-ENTRYPOINT ["mlflow", "models", "serve", "-m", "model", "-p", "5000"]
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+ENV MODEL_PATH /opt/ml/model
+
+EXPOSE 8080
+
+ENTRYPOINT ["mlflow", "models", "serve", "-m", "${MODEL_PATH}", "--host", "0.0.0.0", "--port", "8080", "--env-manager", "local"]
