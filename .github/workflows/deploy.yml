@@ -31,7 +31,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t mlflow-model ./docker
+        docker build -t mlflow-model .
 
     - name: Tag and Push Docker image to ECR
       env:
