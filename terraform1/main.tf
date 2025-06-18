@@ -22,7 +22,7 @@ resource "aws_sagemaker_model" "ml_model" {
 }
 
 # 2. SageMaker Endpoint Configuration
-# This resource defines the compute instances (e.g., ml.t2.medium) that will host your model.
+# This resource defines the compute instances that will host your model.
 
 resource "aws_sagemaker_endpoint_configuration" "ml_endpoint_config" {
   name = "${aws_sagemaker_model.ml_model.name}-config" # Naming convention: model-name-config
@@ -49,4 +49,5 @@ resource "aws_sagemaker_endpoint" "ml_endpoint" {
 
   tags = {
     Project = "MLFlowDeployment"
+ }
 }
