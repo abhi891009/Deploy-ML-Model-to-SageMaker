@@ -1,4 +1,4 @@
-name: Deploy ML Model to SageMaker using Github action
+name: Deploy ML Model to SageMaker
 
 on:
   push:
