@@ -10,4 +10,4 @@ ENV MODEL_PATH /opt/ml/model
 
 EXPOSE 8080
 
-ENTRYPOINT ["mlflow", "models", "serve", "-m", "${MODEL_PATH}", "--host", "0.0.0.0", "--port", "8080", "--env-manager", "local"]
+CMD ["mlflow", "models", "serve", "-m", "/opt/ml/model", "--host", "0.0.0.0", "--port", "8080", "--env-manager", "local"]
