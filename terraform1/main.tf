@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 resource "aws_ecr_repository" "mlflow_model" {
-  name = "mlflow-model1"
+  name = "mlflow-model3"
 }
 
 resource "aws_sagemaker_model" "ml_model" {
-  name               = "mlflow-model1"
+  name               = "mlflow-model3"
   execution_role_arn = var.sagemaker_role_arn
 
   lifecycle {
